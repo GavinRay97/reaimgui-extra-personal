@@ -1,8 +1,7 @@
 -- Requires will try to use either system package manager, or third-party package manages (vcpkg, Conan, etc)
 -- To automatically find and wire up library dependencies
-add_requires("vcpkg::imgui 1.82")
-
 add_rules("mode.debug", "mode.release")
+add_requires("vcpkg::imgui 1.82", "boost-core", "boost-preprocessor", "boost-type-index")
 
 -- 1. Set the current config: $ xmake config --plat=windows --mode=debug --arch=x64 --verbose --diagnosis --clean
 -- 2. Then run the build:     $ xmake build --verbose --diagnosis
@@ -16,46 +15,39 @@ target("reaper_imgui_extra_myaddon_x64")
   add_files("src/*.cpp")
   add_files("src/widgets/*.cpp")
   add_files("src/widgets/color-themes/*.cpp")
-  add_includedirs("./vendor")
+  add_includedirs("./vendor/reaimgui")
   add_includedirs("./vendor/reaper-sdk/sdk")
   add_packages("vcpkg::imgui")
-  
-  -- after_build(function (target)
-  --   import("core.project.task")
-  --   task.run("generate_cmakelists_and_compile_commandss")
-  -- end)
-
-task("fetch_reaper_sdk")
-  on_run(function()
-    import("devel.git")
-
-    if os.exists("./vendor/reaper-sdk") then
-      print("./vendor/reaper-sdk already exists, not fetching it")
-      return
-    end
-
-    if not os.exists("./vendor/reaper-sdk") and os.tryrm("./vendor/reaper-sdk") then
-      print("Successfully cleaned old ./vendor/reaper-sdk")
-    end
-
-    print("Fetching ./vendor/reaper-sdk...")
-    git.clone("https://github.com/justinfrankel/reaper-sdk.git", { branch = "main", outputdir = "./vendor/reaper-sdk" })
-    -- Maybe git.fetch() here to grab specific SHA?
+  after_build(function (target)
+    import("core.project.task")
+    task.run("generate_cmakelists_and_compile_commands")
   end)
-  set_menu({
-    usage = "xmake fetch_reaper_sdk",
-    description = "",
-    options = {}
-  })
-
 
 task("generate_cmakelists_and_compile_commands")
   on_run(function ()
-    os.exec("xmake project -k cmakelists -a x64 -vD")
-    os.exec("xmake project -k compile_commands -a x64 -vD")
+    import("core.base.task")
+    import("core.project.project")
+    -- Run only once for all xmake processes
+    local tmpfile = os.tmpfile(path.join(os.projectdir(), "plugin.cmake_compile_db.autoupdate"))
+    local dependfile = tmpfile .. ".d"
+    local lockfile = io.openlock(tmpfile .. ".lock")
+    if lockfile:trylock() then
+      -- We use task instead of os.exec("xmake") to avoid the project lock
+      -- Equivalent to "$ xmake project -k cmakelists"
+      print("Updating CMakeLists.txt...")
+      task.run("project", {kind = "cmakelists"})
+      print("Updating CMakeLists finished")
+      -- Equivalent to "$ xmake project -k compile_commands"
+      print("Updating compile_commands.json...")
+      task.run("project", {kind = "compile_commands"})
+      print("Updating compile_commands finished")
+      lockfile:close()
+    end
   end)
   set_menu({
     usage = "xmake generate_cmakelists_and_compile_commands",
     description = "",
     options = {}
   })
+
+

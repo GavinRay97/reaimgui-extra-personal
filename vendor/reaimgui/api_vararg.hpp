@@ -22,7 +22,7 @@
 
 template <typename T> struct ReaScriptAPI;
 
-template <typename R, typename... Args> struct ReaScriptAPI<R (*)(Args...)>
+template <typename R, typename... Args> struct ReaScriptAPI<R (*)(Args...) noexcept>
 {
     static const void* applyVarArg(R (*fn)(Args...), void** argv, const int argc)
     {

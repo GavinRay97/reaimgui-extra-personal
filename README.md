@@ -1,10 +1,16 @@
 # ReaImGui Extra Template
 
 - [ReaImGui Extra Template](#reaimgui-extra-template)
+  - [Acknowledgements](#acknowledgements)
   - [Intro](#intro)
   - [Architecture](#architecture)
   - [Installation/Building](#installationbuilding)
-  - [Acknowledgements](#acknowledgements)
+  - [Notes on working with REAPER/ReaScript values from C++](#notes-on-working-with-reaperreascript-values-from-c)
+
+## Acknowledgements
+
+My sincerest thanks go to @cfillion for holding my hand during most of this process and not losing patience with me =)
+This would not have been possible without his guidance and many long conversations he endured.
 
 ## Intro
 
@@ -98,6 +104,29 @@ target("reaper_imgui_extra_myaddon_x64")
   add_packages("imgui")
 ```
 
-## Acknowledgements
+## Notes on working with REAPER/ReaScript values from C++
 
-My sincerest thanks go to @cfillion for holding my hand during most of this process and not losing patience with me =)
+Taken from: https://github.com/reaper-oss/sws/blob/5d31e552ad3bcec8e03b0344d1833ea4d2f5fbf6/ReaScript.cpp#L93-L122
+
+```
+///////////////////////////////////////////////////////////////////////////////
+// ...
+// Your functions must be made dumb-proof, they must not trust any parameter.
+// ...
+//
+// When defining/documenting API function parameters:
+// - if a (char*,int) pair is encountered, name them buf, buf_sz
+// - if a (const char*,int) pair is encountered, buf, buf*sz as well
+// - if a lone basicType *, use varNameOut or varNameIn or
+// varNameInOptional (if last parameter(s))
+// NF: since REAPER v5.979 we can check varNameInOptional != NULL if caller provided an optional param or not
+// This didn't work correctly before: https://forum.cockos.com/showthread.php?t=219455
+// At the moment (REAPER v5pre6) the supported parameter types are:
+// - int, int\_, bool, bool*, double, double*, char*, const char*
+// - AnyStructOrClass* (handled as an opaque pointer)
+// At the moment (REAPER v5pre6) the supported return types are:
+// - int, bool, double, const char*
+// - AnyStructOrClass\* (handled as an opaque pointer)
+//
+///////////////////////////////////////////////////////////////////////////////
+```

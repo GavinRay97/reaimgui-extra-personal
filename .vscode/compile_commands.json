@@ -1,56 +1,61 @@
 [
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\api.cpp.obj", "src\\api.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\api.cpp.obj", "src\\api.cpp"],
   "file": "src\\api.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\main.cpp.obj", "src\\main.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\main.cpp.obj", "src\\main.cpp"],
   "file": "src\\main.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\utils.cpp.obj", "src\\utils.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\utils.cpp.obj", "src\\utils.cpp"],
   "file": "src\\utils.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\bezier-widget.cpp.obj", "src\\widgets\\bezier-widget.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\bezier-widget.cpp.obj", "src\\widgets\\bezier-widget.cpp"],
   "file": "src\\widgets\\bezier-widget.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\bezier.cpp.obj", "src\\widgets\\bezier.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\bezier.cpp.obj", "src\\widgets\\bezier.cpp"],
   "file": "src\\widgets\\bezier.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\curve-editor-lumix.cpp.obj", "src\\widgets\\curve-editor-lumix.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\curve-editor-lumix.cpp.obj", "src\\widgets\\curve-editor-lumix.cpp"],
   "file": "src\\widgets\\curve-editor-lumix.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\curve-editor.cpp.obj", "src\\widgets\\curve-editor.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\curve-editor.cpp.obj", "src\\widgets\\curve-editor.cpp"],
   "file": "src\\widgets\\curve-editor.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\markdown.cpp.obj", "src\\widgets\\markdown.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\L2D-file-dialog.cpp.obj", "src\\widgets\\L2D-file-dialog.cpp"],
+  "file": "src\\widgets\\L2D-file-dialog.cpp"
+},
+{
+  "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\markdown.cpp.obj", "src\\widgets\\markdown.cpp"],
   "file": "src\\widgets\\markdown.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\style.cpp.obj", "src\\widgets\\style.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\style.cpp.obj", "src\\widgets\\style.cpp"],
   "file": "src\\widgets\\style.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\toggle-button.cpp.obj", "src\\widgets\\toggle-button.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\toggle-button.cpp.obj", "src\\widgets\\toggle-button.cpp"],
   "file": "src\\widgets\\toggle-button.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
-  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\color-themes\\style-serializer.cpp.obj", "src\\widgets\\color-themes\\style-serializer.cpp"],
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Ox", "/fp:fast", "/std:c++17", "/I", "vendor\\reaimgui", "/I", "vendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\color-themes\\style-serializer.cpp.obj", "src\\widgets\\color-themes\\style-serializer.cpp"],
   "file": "src\\widgets\\color-themes\\style-serializer.cpp"
 }]

@@ -5,7 +5,11 @@
 #include "api_vararg.hpp"
 
 #include "reaper_imgui_functions.h"
+#include "reaper_plugin_secrets.h"
+#include <api_helper.hpp>
 #include <imgui.h>
+
+#include "./utils.hpp"
 
 // Grab handles to internal ReaImGui functions
 ReaImGuiFunc<bool(const char* version, size_t sz_io, size_t sz_style, size_t sz_vec2, size_t sz_vec4, size_t sz_vert,
@@ -114,4 +118,43 @@ auto generate_reascript_apidef_string(const std::string& return_type,
     // <description>
     ReaScriptAPIDef.append(description);
     return ReaScriptAPIDef;
+}
+
+// https://github.com/cfillion/reaimgui/blob/7a05b4d2c44a4a9f4c51789a40acb51dd58a109a/src/api_input.cpp#L25
+void copyToBuffer(const std::string& value, char* buf, const size_t bufSize)
+{
+    int newSize{};
+    if (value.size() >= bufSize && realloc_cmd_ptr(&buf, &newSize, value.size()))
+    {
+        // the buffer is no longer null-terminated after using realloc_cmd_ptr!
+        std::memcpy(buf, value.c_str(), newSize);
+    }
+    else
+    {
+        const size_t limit{(((bufSize - 1) < (value.size())) ? (bufSize - 1) : (value.size()))};
+        std::memcpy(buf, value.c_str(), limit);
+        buf[limit] = '\0';
+    }
+}
+
+// https://github.com/cfillion/reaimgui/blob/7a05b4d2c44a4a9f4c51789a40acb51dd58a109a/src/api_plots.cpp#L22-L26
+static float getArrayValue(void* data, const int index)
+{
+    const double value{static_cast<double*>(data)[index]};
+    return static_cast<float>(value);
+}
+
+// https://github.com/cfillion/reaimgui/blob/62b77d3e9e6b092c1f7311d7c2692122a4c3931a/src/api_drawlist.cpp#L218
+std::vector<ImVec2> ImVec2_from_reaper_array(const reaper_array* points)
+{
+    assertValid(points);
+
+    if (points->size % 2)
+        throw reascript_error{"an odd amount of points was provided (expected x,y pairs)"};
+
+    std::vector<ImVec2> out;
+    out.reserve(points->size / 2);
+    for (unsigned int i = 0; i < points->size - 1; i += 2)
+        out.push_back(ImVec2(points->data[i], points->data[i + 1]));
+    return out;
 }

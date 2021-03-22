@@ -11,7 +11,7 @@ add_library(reaper_imgui_extra_myaddon_x64 SHARED "")
 set_target_properties(reaper_imgui_extra_myaddon_x64 PROPERTIES OUTPUT_NAME "reaper_imgui_extra_myaddon_x64")
 set_target_properties(reaper_imgui_extra_myaddon_x64 PROPERTIES LIBRARY_OUTPUT_DIRECTORY "build/windows/x64/debug")
 target_include_directories(reaper_imgui_extra_myaddon_x64 PRIVATE
-    vendor
+    vendor/reaimgui
     vendor/reaper-sdk/sdk
 )
 target_include_directories(reaper_imgui_extra_myaddon_x64 PRIVATE
@@ -46,6 +46,7 @@ target_sources(reaper_imgui_extra_myaddon_x64 PRIVATE
     src/widgets/bezier.cpp
     src/widgets/curve-editor-lumix.cpp
     src/widgets/curve-editor.cpp
+    src/widgets/L2D-file-dialog.cpp
     src/widgets/markdown.cpp
     src/widgets/style.cpp
     src/widgets/toggle-button.cpp

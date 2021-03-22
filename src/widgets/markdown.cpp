@@ -1,6 +1,7 @@
 #include "./markdown.hpp"
 #include "../utils.hpp"
-#include "imgui.h"
+
+#include <imgui.h>
 // Following includes for Windows LinkCallback
 #define WIN32_LEAN_AND_MEAN
 #include "Shellapi.h"
@@ -75,11 +76,11 @@ void ExampleMarkdownFormatCallback(const ImGui::MarkdownFormatInfo& markdownForm
         {
             if (start_)
             {
-                ImGui::PushStyleColor(ImGuiCol_Text, ImGui::GetStyle().Colors[ImGuiCol_TextDisabled]);
+                // ImGui::PushStyleColor(ImGuiCol_Text, ImGui::GetStyle().Colors[ImGuiCol_TextDisabled]);
             }
             else
             {
-                ImGui::PopStyleColor();
+                // ImGui::PopStyleColor();
             }
         }
         break;
@@ -106,13 +107,9 @@ void MarkdownHandler(const std::string& markdown_)
     ImGui::Markdown(markdown_.c_str(), markdown_.length(), mdConfig);
 }
 
-void Markdown(ImGui_Context* ctx, const char* text)
-{
+DEFINE_API(void, Markdown, (ImGui_Context*, ctx)(const char*, text), "Render Markdown to ImGui Elements", {
     if (!FRAME_GUARD(ctx))
         throw;
 
     MarkdownHandler(text);
-}
-
-DEFINE_API(Markdown)
-("void", {{"ImGui_Context*", "ctx"}, {"const char*", "text"}}, "Render Markdown to ImGui elements");
+});
