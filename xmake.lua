@@ -1,6 +1,7 @@
 -- Requires will try to use either system package manager, or third-party package manages (vcpkg, Conan, etc)
 -- To automatically find and wire up library dependencies
-add_requires("imgui v1.82", { verify = false })
+add_requires("vcpkg::imgui 1.82")
+
 add_rules("mode.debug", "mode.release")
 
 -- 1. Set the current config: $ xmake config --plat=windows --mode=debug --arch=x64 --verbose --diagnosis --clean
@@ -16,7 +17,7 @@ target("reaper_imgui_extra_myaddon_x64")
   add_files("src/widgets/*.cpp")
   add_includedirs("./vendor")
   add_includedirs("./vendor/reaper-sdk/sdk")
-  add_packages("imgui")
+  add_packages("vcpkg::imgui")
   
   -- after_build(function (target)
   --   import("core.project.task")
