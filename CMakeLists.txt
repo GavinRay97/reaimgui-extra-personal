@@ -46,6 +46,8 @@ target_sources(reaper_imgui_extra_myaddon_x64 PRIVATE
     src/widgets/bezier.cpp
     src/widgets/curve-editor-lumix.cpp
     src/widgets/curve-editor.cpp
+    src/widgets/imgui-plot-widget.cpp
+    src/widgets/imgui-plot.cpp
     src/widgets/L2D-file-dialog.cpp
     src/widgets/markdown.cpp
     src/widgets/style.cpp

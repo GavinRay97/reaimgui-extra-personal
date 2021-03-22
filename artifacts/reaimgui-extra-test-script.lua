@@ -1,5 +1,6 @@
-local ctx = reaper.ImGui_CreateContext("My script", 620, 500)
+local ctx = reaper.ImGui_CreateContext("My script", 900, 500)
 
+-- 37 THEMES MAPPED
 local theme_map = {
     "DefaultClassic", "DefaultDark", "DefaultLight", "Gray", "Light",
     "BlackCodz01", "DarkCodz01", "GrayCodz01", "Purple", "Cherry", "DarkOpaque",
@@ -49,7 +50,9 @@ local lumix_curve_editor_points = make_random_xy_points_reaper_array(5, 100)
 local other_curve_editor_points = make_random_xy_points_reaper_array(5)
 
 local out_ptr_curve_editor_new_count = 0
-local my_toggle_bool = false
+
+file_dialogue_open = false
+filepath_buf_ptr = "C:"
 
 local curve_editor_size_w, curve_editor_size_h = 300, 150
 
@@ -89,9 +92,19 @@ function loop()
     local version = reaper.ImGui_GetVersion()
     reaper.ImGui_Text(ctx, "ImGui v" .. version)
 
-    my_toggle_bool = reaper.ImGui_Extra_ToggleButton(ctx, "My Toggle",
-                                                     my_toggle_bool)
-    reaper.ImGui_Text(ctx, string.format("%s", my_toggle_bool))
+    reaper.ImGui_Text(ctx, "File Dialogue Toggle:")
+    file_dialogue_open = reaper.ImGui_Extra_ToggleButton(ctx, "My Toggle",
+                                                         file_dialogue_open)
+
+    reaper.ImGui_Text(ctx, string.format("%s", file_dialogue_open))
+    local selection_types = {file = 0, folder = 1}
+    file_dialogue_open, filepath_buf_ptr =
+        reaper.ImGui_Extra_Lime2DFileDialogue(ctx, file_dialogue_open,
+                                              filepath_buf_ptr,
+                                              selection_types.file)
+
+    reaper.ImGui_Text(ctx, "Picked file/folder = " ..
+                          string.format("%s", filepath_buf_ptr))
 
     _, theme = reaper.ImGui_Combo(ctx, "ImGui Preset Style", theme,
                                   theme_map_combo_box_string)

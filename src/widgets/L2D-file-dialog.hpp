@@ -48,7 +48,7 @@ void ShowFileDialog(bool* open, char* buffer, unsigned int bufferSize, FileDialo
 {
     static int fileDialogFileSelectIndex = 0;
     static int fileDialogFolderSelectIndex = 0;
-    static std::string fileDialogCurrentPath = "C:\\dev\\";
+    static std::string fileDialogCurrentPath = "C:\\";
     static std::string fileDialogCurrentFile = "";
     static std::string fileDialogCurrentFolder = "";
     static char fileDialogError[500] = "";
@@ -59,8 +59,10 @@ void ShowFileDialog(bool* open, char* buffer, unsigned int bufferSize, FileDialo
 
     if (open)
     {
+        const auto* selectionPrompt = (type == FileDialogType::OpenFile) ? "Select a file" : "Select a folder";
+
         ImGui::SetNextWindowSize(ImVec2(740.0f, 410.0f));
-        ImGui::Begin("Select a file", nullptr, ImGuiWindowFlags_NoResize);
+        ImGui::Begin(selectionPrompt, nullptr, ImGuiWindowFlags_NoResize);
 
         std::vector<std::filesystem::directory_entry> files;
         std::vector<std::filesystem::directory_entry> folders;
@@ -362,9 +364,10 @@ void ShowFileDialog(bool* open, char* buffer, unsigned int bufferSize, FileDialo
         ImGui::SameLine();
         if (ImGui::Button("Choose"))
         {
-            if (type == FileDialogType::SelectFolder)
+            switch (type)
             {
-                if (fileDialogCurrentFolder == "")
+            case FileDialogType::SelectFolder: {
+                if (fileDialogCurrentFolder.empty())
                 {
                     strcpy_s(fileDialogError, "Error: You must select a folder!");
                 }
@@ -378,6 +381,24 @@ void ShowFileDialog(bool* open, char* buffer, unsigned int bufferSize, FileDialo
                     fileDialogCurrentFile = "";
                     fileDialogOpen = false;
                 }
+                break;
+            }
+            case FileDialogType::OpenFile: {
+                if (fileDialogCurrentFile.empty())
+                {
+                    strcpy_s(fileDialogError, "Error: You must select a file!");
+                }
+                else
+                {
+                    strcpy(buffer, selectedFilePath.c_str());
+                    buffer = selectedFilePath.data();
+                    fileDialogFileSelectIndex = 0;
+                    fileDialogFolderSelectIndex = 0;
+                    fileDialogCurrentFile = "";
+                    fileDialogOpen = false;
+                }
+                break;
+            }
             }
         }
 
@@ -387,7 +408,7 @@ void ShowFileDialog(bool* open, char* buffer, unsigned int bufferSize, FileDialo
         }
 
         ImGui::End();
-    }
+    } // namespace FileDialog
 }
 
 } // namespace FileDialog

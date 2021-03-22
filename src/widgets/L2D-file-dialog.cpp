@@ -12,21 +12,24 @@
 
 DEFINE_API(
     void, Lime2DFileDialogue,
-    (ImGui_Context*, ctx)(bool*, API_RW(fileDialogOpen))(char*, API_RWBIG(buf))(int, API_RWBIG_SZ(buf)),
+    (ImGui_Context*, ctx)(bool*, API_RW(fileDialogOpen))(char*, API_RWBIG(buf))(int, API_RWBIG_SZ(buf))(int,
+                                                                                                        dialogueType),
     "A file dialogue. Requires a boolean for whether the dialogue should be open, and a string variable to store the, "
-    "chosen file/folder path to.",
+    "chosen file/folder path to.\ndialogueType: 0 = Select File, 1 = Select Folder",
     {
         if (!FRAME_GUARD(ctx))
             throw;
-
         assertValid(API_RWBIG(buf));
 
         if (*API_RW(fileDialogOpen) == true)
         {
-            std::string value{API_RWBIG(buf)};
-
             FileDialog::fileDialogOpen = true;
-            FileDialog::ShowFileDialog(API_RW(fileDialogOpen), reinterpret_cast<char*>(&value), API_RWBIG_SZ(buf));
-            copyToBuffer(value, API_RWBIG(buf), API_RWBIG_SZ(buf));
+            FileDialog::ShowFileDialog(API_RW(fileDialogOpen), API_RWBIG(buf), API_RWBIG_SZ(buf),
+                                       FileDialog::FileDialogType(dialogueType));
+        }
+
+        if (FileDialog::fileDialogOpen == false)
+        {
+            *API_RW(fileDialogOpen) = false;
         }
     });
