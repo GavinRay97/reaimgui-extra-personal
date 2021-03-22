@@ -1,8 +1,22 @@
 local ctx = reaper.ImGui_CreateContext("My script", 620, 500)
 
--- 37 THEMES MAPPED
+local theme_map = {
+    "DefaultClassic", "DefaultDark", "DefaultLight", "Gray", "Light",
+    "BlackCodz01", "DarkCodz01", "GrayCodz01", "Purple", "Cherry", "DarkOpaque",
+    "Soft", "EdinBlack", "EdinWhite", "Maya", "LightGreen", "Design", "Dracula",
+    "Greenish", "C64", "PhotoStore", "CorporateGreyFlat", "CorporateGreyFramed",
+    "VisualDark", "SteamingLife", "SoftLife", "GoldenBlack", "Windowed",
+    "OverShiftedBlack", "AieKickGreenBlue", "AieKickRedDark",
+    "DarkOpaqueInverse", "GrayCodz01Inverse", "PurpleInverse",
+    "LightGreenInverse", "DesignInverse"
+}
+
+local theme_map_combo_box_string = ""
+for _, val in ipairs(theme_map) do
+    theme_map_combo_box_string = theme_map_combo_box_string .. val .. "\31"
+end
+
 local theme = 9 -- "CHERRY"
-local click_count, text = 0, ""
 
 local SEPARATOR = function()
     reaper.ImGui_Spacing(ctx)
@@ -39,6 +53,25 @@ local my_toggle_bool = false
 
 local curve_editor_size_w, curve_editor_size_h = 300, 150
 
+local markdown_string = [[
+# Header 1
+The following should be an unordered list:
+- One
+- Two
+- Three
+  - Testing for sub-list ability
+  - Another sub-list item
+
+The following should be bulleted list:
+  *  One
+  *  Two
+  *  Three
+    *  Testing for sub-list ability
+    *  Another sub-list item
+    
+===================================================
+]]
+
 function loop()
     local rv
 
@@ -51,29 +84,19 @@ function loop()
     reaper.ImGui_SetNextWindowSize(ctx, reaper.ImGui_GetDisplaySize(ctx))
     reaper.ImGui_Begin(ctx, "wnd", nil, reaper.ImGui_WindowFlags_NoDecoration())
 
+    reaper.ImGui_Extra_LoadPresetStyle(ctx, theme)
+
     local version = reaper.ImGui_GetVersion()
     reaper.ImGui_Text(ctx, "ImGui v" .. version)
 
     my_toggle_bool = reaper.ImGui_Extra_ToggleButton(ctx, "My Toggle",
                                                      my_toggle_bool)
-
     reaper.ImGui_Text(ctx, string.format("%s", my_toggle_bool))
 
-    if reaper.ImGui_Button(ctx, "Click me!") then
-        click_count = click_count + 1
-        if theme + 1 > 36 then
-            theme = 0
-        else
-            theme = theme + 1
-        end
-    end
+    _, theme = reaper.ImGui_Combo(ctx, "ImGui Preset Style", theme,
+                                  theme_map_combo_box_string)
 
-    SEPARATOR()
-
-    if click_count % 2 == 1 then
-        reaper.ImGui_SameLine(ctx)
-        reaper.ImGui_Text(ctx, [[\o/]])
-    end
+    reaper.ImGui_Extra_Markdown(ctx, markdown_string)
 
     reaper.ImGui_Text(ctx, "reaper.array points:")
     for idx, val in ipairs(bezier_array.table()) do

@@ -46,6 +46,9 @@ target_sources(reaper_imgui_extra_myaddon_x64 PRIVATE
     src/widgets/bezier.cpp
     src/widgets/curve-editor-lumix.cpp
     src/widgets/curve-editor.cpp
+    src/widgets/markdown.cpp
+    src/widgets/style.cpp
     src/widgets/toggle-button.cpp
+    src/widgets/color-themes/style-serializer.cpp
 )
 
