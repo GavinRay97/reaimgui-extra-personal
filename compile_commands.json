@@ -46,6 +46,11 @@
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x64\\debug\\compile.reaper_imgui_extra_myaddon_x64.pdb", "/Ox", "/fp:fast", "/std:c++17", "/Ivendor\\reaimgui", "/Ivendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\imnodes-widget.cpp.obj", "src\\widgets\\imnodes-widget.cpp"],
+  "file": "src\\widgets\\imnodes-widget.cpp"
+},
+{
+  "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
   "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x64\\debug\\compile.reaper_imgui_extra_myaddon_x64.pdb", "/Ox", "/fp:fast", "/std:c++17", "/Ivendor\\reaimgui", "/Ivendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\L2D-file-dialog.cpp.obj", "src\\widgets\\L2D-file-dialog.cpp"],
   "file": "src\\widgets\\L2D-file-dialog.cpp"
 },
@@ -63,6 +68,11 @@
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
   "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x64\\debug\\compile.reaper_imgui_extra_myaddon_x64.pdb", "/Ox", "/fp:fast", "/std:c++17", "/Ivendor\\reaimgui", "/Ivendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\toggle-button.cpp.obj", "src\\widgets\\toggle-button.cpp"],
   "file": "src\\widgets\\toggle-button.cpp"
+},
+{
+  "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",
+  "arguments": ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29910\\bin\\HostX64\\x64\\cl.exe", "/c", "/EHsc", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x64\\debug\\compile.reaper_imgui_extra_myaddon_x64.pdb", "/Ox", "/fp:fast", "/std:c++17", "/Ivendor\\reaimgui", "/Ivendor\\reaper-sdk\\sdk", "/IC:\\Users\\rayga\\Projects\\vcpkg\\installed\\x64-windows-static\\include", "/Fobuild\\.objs\\reaper_imgui_extra_myaddon_x64\\windows\\x64\\debug\\src\\widgets\\imnodes\\imnodes.cpp.obj", "src\\widgets\\imnodes\\imnodes.cpp"],
+  "file": "src\\widgets\\imnodes\\imnodes.cpp"
 },
 {
   "directory": "C:\\Users\\rayga\\Projects\\reaimgui-extra-personal",

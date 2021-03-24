@@ -48,10 +48,12 @@ target_sources(reaper_imgui_extra_myaddon_x64 PRIVATE
     src/widgets/curve-editor.cpp
     src/widgets/imgui-plot-widget.cpp
     src/widgets/imgui-plot.cpp
+    src/widgets/imnodes-widget.cpp
     src/widgets/L2D-file-dialog.cpp
     src/widgets/markdown.cpp
     src/widgets/style.cpp
     src/widgets/toggle-button.cpp
+    src/widgets/imnodes/imnodes.cpp
     src/widgets/color-themes/style-serializer.cpp
 )
 

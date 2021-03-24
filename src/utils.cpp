@@ -158,3 +158,18 @@ std::vector<ImVec2> ImVec2_from_reaper_array(const reaper_array* points)
         out.push_back(ImVec2(points->data[i], points->data[i + 1]));
     return out;
 }
+
+reaper_array reaper_array_from_ImVec2(reaper_array* array, std::vector<ImVec2> points)
+{
+    assertValid(array);
+
+    if (array->size % 2)
+        throw reascript_error{"an odd amount of points was provided (expected x,y pairs)"};
+
+    size_t i{0};
+    for (const ImVec2& point : points)
+    {
+        array->data[i++] = point.x;
+        array->data[i++] = point.y;
+    }
+}
